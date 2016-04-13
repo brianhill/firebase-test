@@ -20,11 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Create a reference to a Firebase location
         let myRootRef = Firebase(url:"https://stmarys-cs190-test1.firebaseio.com")
+        
         // Read data and react to changes
         myRootRef.observeEventType(.Value, withBlock: {
-            snapshot in
-            print("\(snapshot.value)")
-        })
+            snapshot in print("\(snapshot.value)")
+            }
+        )
+        
         // Write data to Firebase
         myRootRef.setValue("Do you have data? You'll love Firebase.")
         
