@@ -3,19 +3,31 @@
 //  FirebaseTest
 //
 //  Created by Brian Hill on 4/13/16.
-//  Copyright © 2016 CS190. All rights reserved.
-//
+//  Following Firebase iOS Quickstart (not using CocoaPods):
+//  https://www.firebase.com/docs/ios/quickstart.html
 
 import UIKit
+
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Create a reference to a Firebase location
+        let myRootRef = Firebase(url:"https://stmarys-cs190-test1.firebaseio.com")
+        // Read data and react to changes
+        myRootRef.observeEventType(.Value, withBlock: {
+            snapshot in
+            print("\(snapshot.value)")
+        })
+        // Write data to Firebase
+        myRootRef.setValue("Do you have data? You'll love Firebase.")
+        
         return true
     }
 

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D35177731CBEE6170090F418 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35177721CBEE6170090F418 /* Firebase.framework */; };
+		D35177751CBEE68D0090F418 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35177741CBEE68D0090F418 /* CFNetwork.framework */; };
+		D35177771CBEE69E0090F418 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35177761CBEE69E0090F418 /* Security.framework */; };
+		D35177791CBEE6A80090F418 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35177781CBEE6A80090F418 /* SystemConfiguration.framework */; };
+		D351777B1CBEE7D00090F418 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D351777A1CBEE7D00090F418 /* libc++.tbd */; };
+		D351777D1CBEE7EC0090F418 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D351777C1CBEE7EC0090F418 /* libicucore.tbd */; };
 		D3B8ACE91CBEE42C00A6B7EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B8ACE81CBEE42C00A6B7EE /* AppDelegate.swift */; };
 		D3B8ACEB1CBEE42C00A6B7EE /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B8ACEA1CBEE42C00A6B7EE /* FirstViewController.swift */; };
 		D3B8ACED1CBEE42C00A6B7EE /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B8ACEC1CBEE42C00A6B7EE /* SecondViewController.swift */; };
@@ -16,6 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D35177721CBEE6170090F418 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		D35177741CBEE68D0090F418 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		D35177761CBEE69E0090F418 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D35177781CBEE6A80090F418 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D351777A1CBEE7D00090F418 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		D351777C1CBEE7EC0090F418 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		D3B8ACE51CBEE42C00A6B7EE /* FirebaseTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B8ACE81CBEE42C00A6B7EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3B8ACEA1CBEE42C00A6B7EE /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +43,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D351777D1CBEE7EC0090F418 /* libicucore.tbd in Frameworks */,
+				D351777B1CBEE7D00090F418 /* libc++.tbd in Frameworks */,
+				D35177791CBEE6A80090F418 /* SystemConfiguration.framework in Frameworks */,
+				D35177771CBEE69E0090F418 /* Security.framework in Frameworks */,
+				D35177751CBEE68D0090F418 /* CFNetwork.framework in Frameworks */,
+				D35177731CBEE6170090F418 /* Firebase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,8 +58,14 @@
 		D3B8ACDC1CBEE42C00A6B7EE = {
 			isa = PBXGroup;
 			children = (
+				D351777C1CBEE7EC0090F418 /* libicucore.tbd */,
+				D351777A1CBEE7D00090F418 /* libc++.tbd */,
+				D35177781CBEE6A80090F418 /* SystemConfiguration.framework */,
+				D35177761CBEE69E0090F418 /* Security.framework */,
+				D35177741CBEE68D0090F418 /* CFNetwork.framework */,
 				D3B8ACE71CBEE42C00A6B7EE /* FirebaseTest */,
 				D3B8ACE61CBEE42C00A6B7EE /* Products */,
+				D35177721CBEE6170090F418 /* Firebase.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -255,6 +279,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FirebaseTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cs190.stmarys-ca.edu.FirebaseTest";
@@ -266,6 +294,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FirebaseTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cs190.stmarys-ca.edu.FirebaseTest";
@@ -292,6 +324,7 @@
 				D3B8ACFB1CBEE42C00A6B7EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

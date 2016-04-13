@@ -3,7 +3,8 @@
 //  FirebaseTest
 //
 //  Created by Brian Hill on 4/13/16.
-//  Copyright © 2016 CS190. All rights reserved.
+//  Following Firebase iOS Quickstart (not using CocoaPods):
+//  https://www.firebase.com/docs/ios/quickstart.html
 //
 
 import UIKit
@@ -19,7 +20,6 @@ class SecondViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 
