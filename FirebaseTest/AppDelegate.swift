@@ -10,6 +10,16 @@ import UIKit
 
 import Firebase
 
+let event1 = [ "name": "CAB - Warriors Tickets Signup",
+               "who": "All Students",
+               "when": "514556660",
+               "where": "Chapel Lawn"]
+
+let event2 = [ "name": "RHA - Giants Game",
+               "who": "All Students",
+               "when": "516240000",
+               "where": "Galileo Hall"]
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -19,16 +29,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // Create a reference to a Firebase location
-        let myRootRef = Firebase(url:"https://stmarys-cs190-test1.firebaseio.com")
+        let myRootRef = Firebase(url:"https://gael-events.firebaseio.com")
         
-        // Read data and react to changes
-        myRootRef.observeEventType(.Value, withBlock: {
-            snapshot in print("\(snapshot.value)")
+        let allEventsRef = myRootRef.childByAppendingPath("events")
+        
+        let events = ["event1": event1, "event2": event2]
+        
+        allEventsRef.setValue(events)
+        
+        // Read All Events
+        allEventsRef.observeEventType(.Value, withBlock: {
+            snapshot in print("All Events:\n\(snapshot.value)")
             }
         )
-        
-        // Write data to Firebase
-        myRootRef.setValue("Do you have data? You'll love Firebase.")
+
+        // Read Event 1
+        let event1Ref = allEventsRef.childByAppendingPath("event1")
+        event1Ref.observeEventType(.Value, withBlock: {
+            snapshot in print("Event 1: \(snapshot.value)")
+            }
+        )
         
         return true
     }
